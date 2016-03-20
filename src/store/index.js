@@ -48,20 +48,19 @@ store.getPost = (title, path = 'markdown') => {
 store.getListByName = (name = 'markdown') => {
   return new Promise((resolve, reject) => {
 
-    if (sessionStorage && sessionStorage.getItem('posts')) {
+    if (sessionStorage && sessionStorage.getItem(name)) {
 
       // read data from cache
-      resolve(JSON.parse(sessionStorage.posts));
+      resolve(JSON.parse(sessionStorage.getItem(name)));
     } else {
 
       const xhr = new XMLHttpRequest();
-      console.log(name);
       xhr.open('GET', URL(name));
       xhr.onload = () => {
         const resJson = xhr.responseText;
         
         // caching
-        sessionStorage.setItem('posts', resJson);
+        sessionStorage.setItem(name, resJson);
         resolve(JSON.parse(resJson));
       };
       xhr.onerror = () => reject;

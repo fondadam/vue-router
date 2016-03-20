@@ -156,8 +156,12 @@
 	      transform: scale(1);
 	      opacity: 1;
 	    }
+	    &.open li {
+	    	z-index: 99;
+	    }
 	    li{
 	      position: relative;
+		    z-index: -10;
 	      .btn-menu{
 	        transform: scale(0);
 	        opacity: 0;
@@ -203,7 +207,6 @@
 
 		  .itens.hidden .item-#{$i}, .itens.open .item-#{$i} .btn-menu-text {
 		    transition: all 100ms cubic-bezier(0.680, -0.550, 0.265, 1.550) ($menu-items - $i + 1)*0.1s; 
-		    z-index: -2;
 		  }
 	    
 	   	$i: $i + 1;

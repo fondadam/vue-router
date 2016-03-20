@@ -24,7 +24,6 @@
 
   import store from '../store';
   import { onlyTitle, onlyPublishDate } from '../filters';
-
   export default {
     name: 'Listview',
 
@@ -43,7 +42,6 @@
       data ({ to }) {
         const archive = to.params.archive;
         document.title = to.setting.blogTitle;
-
         return {
           items: store.getListByName(archive).then(items => items)
         };
@@ -64,7 +62,7 @@
   .list-view {
     margin-top: 1rem;
     li {
-      margin-bottom: .7rem;
+      padding-bottom: 2rem;
       position: relative;
       white-space: nowrap;
       overflow-y: scroll;
@@ -74,16 +72,17 @@
         background: transparent;
       }
 
-      &:last-child{
+      &:last-child {
+        display: inline-block;
         border-left: 2px solid #FFF;
         margin-left: -2px;
         padding-left: 1.2rem;
       }
       a {
         display: inline-block;
+        margin-top: .7rem;
         font-size: 1.1rem;
         text-decoration: none;
-
       }
     }
   }

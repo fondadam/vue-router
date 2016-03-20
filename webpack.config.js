@@ -22,7 +22,7 @@ module.exports = {
     },
     output: {
         path: BUILD_PATH,
-        publicPath: './',
+        publicPath: 'dist/',
         filename: '[name].js',
         chunkFilename: '[chunkhash:8].js'
     },
@@ -41,7 +41,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'vue-router-demo',
             template: path.resolve(TPL_PATH, 'index.html'),
-            filename: 'index.html'
+            filename: '../index.html'
         }),
         //把指定文件夹下的文件复制到指定的目录
         new CopyWebpackPlugin([{

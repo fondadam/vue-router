@@ -37,13 +37,11 @@
 
 <script>
 
+	import Vue from 'vue';
 	import MenuButton from './MenuButton.vue';
 
-	export default {
-		components: {
-			'menu-button': MenuButton
-		}
-	}
+	Vue.component('menu-button', MenuButton);
+
 </script>
 
 <style lang="sass">
