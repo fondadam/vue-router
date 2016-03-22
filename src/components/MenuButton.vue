@@ -1,5 +1,8 @@
 <template>
 	<div class="menu-btn">
+		<div class="open-menu-up" @click="isOpen=!isOpen">
+		    <img :src="$route.setting.me" alt="me" class="mePng btn-menu">
+		</div>
 	  <ul class="itens" :class="{'open': isOpen, 'hidden': !isOpen}">
 	    <li>
 	    <a v-link="{name: 'archive', params: {archive: 'webpack'}}">
@@ -186,7 +189,8 @@
 	    }
 	  }
 	 
-	  div.open-menu{
+	  div.open-menu,
+	  div.open-menu-up {
 	    .btn-menu{
 	      @extend %btn;
 	      width: 2.8rem;
@@ -196,6 +200,10 @@
 	        @include longshadow(darken(#F44336, 5%));
 	      }
 	    }
+	  }
+
+	  div.open-menu-up {
+	  	display: none;
 	  }
 	  
 	  $menu-items: 4;
@@ -211,6 +219,26 @@
 	    
 	   	$i: $i + 1;
 	  }
+	}
+
+	@media screen and (min-width: 800px) {
+		.menu-btn {
+			position: absolute;
+			top: .1rem;
+			right: 6.5rem;
+			
+			ul.itens {
+				margin-top: 3.5rem;
+			}
+		  div.open-menu {
+		  	display: none;
+		  }
+
+			div.open-menu-up {
+				display: block;
+				position: absolute;
+			}
+		}
 	}
 
 </style>

@@ -110,4 +110,10 @@
       }
     }
   }
+
+  @media screen and (min-width: 700px) {
+    .list-view li {
+      width: 100%;
+    }
+  }
 </style>
