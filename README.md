@@ -1,4 +1,7 @@
 #Vue.js、vue-router学习记录
+
+[DEMO](http://fondadam.github.io/vue-router)
+
 1. 若还没使用过[Vue.js](http://vuejs.org), 请先看几遍文档。
 
 2. 有了一个大概的概念后, 可看官方[HackerNews](https://github.com/vuejs/vue-hackernews)源码进行学习。
